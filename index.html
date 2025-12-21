@@ -1,0 +1,237 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <title>Disease Detection</title>
+    <style>
+        .page{display:none;}
+        .active{display:block;}
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="page1" class="page active">
+    <h1>WELCOME TO BARAF: A DISEASE DETECTING APP</h1><br>
+    <h1 class="dis">DISCLAIMER !</h1><br>
+    <h2>
+        This app is just for educational purpose only.<br>
+        It is not accurate as a doctor does.<br>
+        So, Please consult a licenced doctor as well.
+    </h2><br>
+    <img src="images/health.jpg" width="120" height="120"><br>
+    <button class="my-button" onclick="goTo('page2')">Start</button>
+</section>
+
+<section id="page2" class="page">
+    <button class="my-button" onclick="goTo('page3')">Next</button>
+    <button class="my-button" onclick="goTo('page91')">Analyze Report</button>
+</section>
+
+<section id="page3" class="page">
+    <h2>SYMPTOMS</h2><br>
+    <form>
+        <input id="fever" type="checkbox"> Fever<br>
+        <input id="runny_nose" type="checkbox"> Runny Nose<br>
+        <input id="sore_muscles" type="checkbox"> Sore Muscles<br>
+        <input id="headache" type="checkbox"> Headache<br>
+        <input id="cough" type="checkbox"> Cough<br>
+        <input id="nausea" type="checkbox"> Nausea<br>
+        <input id="migraine" type="checkbox"> Migraine<br>
+        <input id="vomiting" type="checkbox"> Vomiting<br>
+        <input id="fatigue" type="checkbox"> Fatigue<br>
+        <input id="diarrhea" type="checkbox"> Diarrhea<br>
+        <input id="shortness_of_breath" type="checkbox"> Shortness of Breath<br>
+        <input id="chest_pain" type="checkbox"> Chest Pain<br>
+        <input id="sore_throat" type="checkbox"> Sore Throat<br>
+        <input id="chills" type="checkbox"> Chills<br>
+        <input id="abdominal_pain" type="checkbox"> Abdominal Pain<br>
+        <input id="nosebleed" type="checkbox"> Nosebleed<br>
+    </form>
+    <button class="my-button" onclick="submitSymptomsAndPredict()">Find</button>
+</section>
+
+<section id="page4" class="page">
+    <h1>DISEASE</h1><br>
+    <div class="box">
+        <h3 id="diseaseName">Disease :</h3>
+        <p id="diseaseCause">Cause :</p>
+    </div>
+    <button class="my-button" onclick="goTo('page5')">Next</button>
+</section>
+
+<section id="page5" class="page">
+    <div class="box">
+        <h1>Home Remedies</h1><br>
+        <p id="homeRemedy"></p>
+    </div>
+    <button class="my-button" onclick="goTo('page6')">Next</button>
+</section>
+
+<section id="page6" class="page">
+    <div class="box">
+        <h1>Risk Indicator</h1>
+        <textarea id="riskBox" rows="6" cols="30"></textarea>
+    </div>
+    <button class="my-button" onclick="goTo('page7')">Next</button>
+</section>
+
+<section id="page91" class="page">
+    <div class="box">
+        <h3>Blood Test Values</h3>
+        <input type="number" id="hb" placeholder="Hemoglobin (g/dL)">
+        <input type="number" id="sugar" placeholder="Blood Sugar (mg/dL)">
+        <input type="number" id="wbc" placeholder="WBC Count">
+    </div>
+
+    <div class="box">
+        <h3>Blood Pressure</h3>
+        <input type="number" id="systolic" placeholder="Systolic">
+        <input type="number" id="diastolic" placeholder="Diastolic">
+    </div>
+
+    <div class="box">
+        <h3>ECG Result</h3>
+        <select id="ecgResult">
+            <option value="">Select ECG Result</option>
+            <option value="normal">Normal</option>
+            <option value="abnormal">Abnormal</option>
+        </select>
+    </div>
+
+    <div class="box">
+        <p id="reportResult">Enter values and click Analyze</p>
+    </div>
+
+    <button class="my-button" onclick="analyzeReport()">Analyze Report</button>
+    <button class="my-button" onclick="goTo('page7')">Next</button>
+</section>
+
+<section id="page7" class="page">
+    <h1>Doctor Recommendation</h1>
+    <div class="box">
+        <h3 id="doctorType">Recommended Doctor :</h3>
+    </div>
+    <button class="my-button" onclick="suggestDoctorByDisease()">Suggest</button>
+    <button class="my-button" onclick="goTo('page8')">next</button>
+</section>
+
+<section id="page8" class="page">
+    <h1>DISCLAIMER</h1>
+    <p>This app is only for education purpose. Please consult a doctor.</p>
+    <button class="my-button" onclick="goTo('page1')">Get Well Soon</button>
+</section>
+
+<script>
+let predictedDisease = "";
+
+function goTo(pageid){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById(pageid).classList.add('active');
+}
+
+function submitSymptomsAndPredict() {
+
+    const s = {
+        fever: fever.checked,
+        runny_nose: runny_nose.checked,
+        sore_muscles: sore_muscles.checked,
+        headache: headache.checked,
+        cough: cough.checked,
+        nausea: nausea.checked,
+        migraine: migraine.checked,
+        vomiting: vomiting.checked,
+        fatigue: fatigue.checked,
+        diarrhea: diarrhea.checked,
+        shortness_of_breath: shortness_of_breath.checked,
+        chest_pain: chest_pain.checked,
+        sore_throat: sore_throat.checked,
+        chills: chills.checked,
+        abdominal_pain: abdominal_pain.checked,
+        nosebleed: nosebleed.checked
+    };
+
+    if (s.fever && s.cough && s.runny_nose) {
+        predictedDisease = "Common Cold / Flu";
+    }
+    else if (s.migraine && s.headache && s.vomiting) {
+        predictedDisease = "Migraine";
+    }
+    else if (s.nausea && s.vomiting && s.fever) {
+        predictedDisease = "Food Poisoning";
+    }
+    else if (s.chest_pain && s.shortness_of_breath && s.nosebleed) {
+        predictedDisease = "Hypertension";
+    }
+    else {
+        predictedDisease = "General Weakness";
+    }
+
+    showDiseaseDetails();
+    goTo("page4");
+}
+
+function showDiseaseDetails() {
+
+    let cause="", remedy="", risk="";
+
+    if (predictedDisease==="Common Cold / Flu") {
+        cause="Viral respiratory infection";
+        remedy="Rest, warm fluids, steam inhalation";
+        risk="Low";
+    }
+    else if (predictedDisease==="Migraine") {
+        cause="Neurological disorder";
+        remedy="Dark room rest, hydration";
+        risk="Moderate";
+    }
+    else if (predictedDisease==="Food Poisoning") {
+        cause="Contaminated food or water";
+        remedy="ORS, hydration, light food";
+        risk="Moderate";
+    }
+    else if (predictedDisease==="Hypertension") {
+        cause="Stress, obesity, high salt, genetics";
+        remedy="Low salt diet, exercise, stress control";
+        risk="High – heart risk";
+    }
+    else {
+        cause="Weak immunity or fatigue";
+        remedy="Healthy diet, rest";
+        risk="Low";
+    }
+
+    diseaseName.innerHTML = "Disease : " + predictedDisease;
+    diseaseCause.innerHTML = "Cause : " + cause;
+    homeRemedy.innerHTML = "Remedies : " + remedy;
+    riskBox.value = "Risk Level : " + risk;
+}
+
+function analyzeReport() {
+
+    let result="";
+    const hb=hb.value, sugar=sugar.value, wbc=wbc.value;
+    const sys=systolic.value, dia=diastolic.value;
+
+    if(hb) result+= hb<12 ? "Low Hemoglobin<br>" : "Hemoglobin Normal<br>";
+    if(sugar) result+= sugar>140 ? "High Sugar<br>" : "Sugar Normal<br>";
+    if(wbc) result+= wbc>11000 ? "High WBC<br>" : "WBC Normal<br>";
+    if(sys && dia) result+= (sys>140||dia>90) ? "High BP<br>" : "BP Normal<br>";
+    if(ecgResult.value) result+= "ECG : "+ecgResult.value;
+
+    reportResult.innerHTML=result;
+}
+
+function suggestDoctorByDisease() {
+
+    let doctor="General Physician";
+
+    if(predictedDisease==="Migraine") doctor="Neurologist";
+    else if(predictedDisease==="Food Poisoning") doctor="Gastroenterologist";
+    else if(predictedDisease==="Hypertension") doctor="Cardiologist";
+
+    doctorType.innerText="Recommended Doctor : "+doctor;
+}
+</script>
+
+</body>
+</html>

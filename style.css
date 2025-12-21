@@ -1,0 +1,136 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PAGE CONTAINER */
+.page {
+    width: 90%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* HEADINGS */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #1f618d;
+}
+
+/* DISCLAIMER TITLE */
+.dis {
+    color: #c0392b;
+}
+
+/* PARAGRAPH */
+p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* IMAGE */
+img {
+    margin: 10px 0;
+}
+
+/* FORM ELEMENTS */
+form {
+    margin-top: 10px;
+}
+
+input[type="number"],
+select,
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* BUTTONS */
+.my-button,
+.btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.my-button:hover,
+.btn:hover {
+    background: #1f618d;
+}
+
+/* BOX STYLE */
+.box {
+    background: #f4f6f7;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* REPORT PREVIEW SECTIONS */
+.preview {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px dashed #7fb3d5;
+    border-radius: 8px;
+    background: #ebf5fb;
+}
+
+/* TEXTAREA */
+textarea {
+    resize: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .page {
+        padding: 15px;
+    }
+}
+
