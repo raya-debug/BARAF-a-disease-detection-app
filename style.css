@@ -134,3 +134,18 @@ textarea {
     }
 }
 
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 30px;
+    font-size: 16px;
+}
+
+.symptom-grid label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.mood-box {
+    display: none;
+}

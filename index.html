@@ -10,72 +10,96 @@
 </head>
 <body>
 
+
 <section id="page1" class="page active">
-    <h1>WELCOME TO BARAF: A DISEASE DETECTING APP</h1><br>
+    <h1>WELCOME TO<br>BARAF INSIGHTS</h1><br>
     <h1 class="dis">DISCLAIMER !</h1><br>
     <h2>
         This app is just for educational purpose only.<br>
         It is not accurate as a doctor does.<br>
         So, Please consult a licenced doctor as well.
     </h2><br>
-    <img src="images/health.jpg" width="120" height="120"><br>
+    <img src="images/health.png" width="200" height="200"><br>
     <button class="my-button" onclick="goTo('page2')">Start</button>
 </section>
 
 <section id="page2" class="page">
-    <button class="my-button" onclick="goTo('page3')">Next</button>
-    <button class="my-button" onclick="goTo('page91')">Analyze Report</button>
+    <button class="my-button" onclick="goTo('page3')">physical health</button>
+    <button class="my-button" onclick="goTo('page11')">mental health</button>
 </section>
 
 <section id="page3" class="page">
-    <h2>SYMPTOMS</h2><br>
-    <form>
-        <input id="fever" type="checkbox"> Fever<br>
-        <input id="runny_nose" type="checkbox"> Runny Nose<br>
-        <input id="sore_muscles" type="checkbox"> Sore Muscles<br>
-        <input id="headache" type="checkbox"> Headache<br>
-        <input id="cough" type="checkbox"> Cough<br>
-        <input id="nausea" type="checkbox"> Nausea<br>
-        <input id="migraine" type="checkbox"> Migraine<br>
-        <input id="vomiting" type="checkbox"> Vomiting<br>
-        <input id="fatigue" type="checkbox"> Fatigue<br>
-        <input id="diarrhea" type="checkbox"> Diarrhea<br>
-        <input id="shortness_of_breath" type="checkbox"> Shortness of Breath<br>
-        <input id="chest_pain" type="checkbox"> Chest Pain<br>
-        <input id="sore_throat" type="checkbox"> Sore Throat<br>
-        <input id="chills" type="checkbox"> Chills<br>
-        <input id="abdominal_pain" type="checkbox"> Abdominal Pain<br>
-        <input id="nosebleed" type="checkbox"> Nosebleed<br>
-    </form>
-    <button class="my-button" onclick="submitSymptomsAndPredict()">Find</button>
+    <button class="my-button" onclick="goTo('page4')">Detect Disease</button>
+    <button class="my-button" onclick="goTo('page10')">Analyze Report</button>
 </section>
 
 <section id="page4" class="page">
+    <h2>SYMPTOMS</h2><br>
+
+    <form class="symptom-grid">
+
+        <label><input id="rash" type="checkbox"> Rash</label>
+        <label><input id="cough" type="checkbox"> Cough</label>
+        <label><input id="fever" type="checkbox"> Fever</label>
+        <label><input id="chills" type="checkbox"> Chills</label>
+        <label><input id="fatigue" type="checkbox"> Fatigue</label>
+        <label><input id="sneeze" type="checkbox"> Sneeze</label>
+        <label><input id="headache" type="checkbox"> Headache</label>
+        <label><input id="migraine" type="checkbox"> Migraine</label>
+        <label><input id="vomiting" type="checkbox"> Vomiting</label>
+        <label><input id="nausea" type="checkbox"> Nausea</label>
+        <label><input id="confusion" type="checkbox"> confusion</label>
+        <label><input id="diarrhea" type="checkbox"> Diarrhea</label>
+        <label><input id="dizziness" type="checkbox"> Dizziness</label>
+        <label><input id="numbness" type="checkbox"> Numbness</label>
+        <label><input id="nosebleed" type="checkbox"> Nosebleed</label>
+        <label><input id="sore_throat" type="checkbox"> Sore Throat</label>
+        <label><input id="sore_muscles" type="checkbox"> Sore Muscles</label>
+        <label><input id="runny_nose" type="checkbox"> Runny Nose</label>
+        <label><input id="chest_pain" type="checkbox"> Chest Pain</label>
+        <label><input id="abdominal_pain" type="checkbox"> Abdominal Pain</label>
+        <label><input id="night_sweats" type="checkbox"> Night Sweats</label>
+        <label><input id="weight_loss" type="checkbox"> Weight Loss</label>
+        <label><input id="blood_in_stool" type="checkbox"> Blood in Stool</label>
+        <label><input id="shortness_of_breath" type="checkbox"> Shortness of Breath</label>
+        <label><input id="yellow_skin_and_eyes" type="checkbox"> Yellow Skin and Eyes</label>
+        <label><input id="frequent_urination" type="checkbox"> frequent urination</label>
+        <label><input id="blurred_vision" type="checkbox"> blurred vision</label>
+        <label><input id="slow_wound_healing" type="checkbox"> slow wound healing</label>
+        <label><input id="pale_skin" type="checkbox"> pale skin</label>
+
+    </form>
+
+    <br>
+    <button class="my-button" onclick="submitSymptomsAndPredict(); goTo('page5');">Find</button>
+</section>
+
+<section id="page5" class="page">
     <h1>DISEASE</h1><br>
     <div class="box">
         <h3 id="diseaseName">Disease :</h3>
         <p id="diseaseCause">Cause :</p>
-    </div>
-    <button class="my-button" onclick="goTo('page5')">Next</button>
-</section>
-
-<section id="page5" class="page">
-    <div class="box">
-        <h1>Home Remedies</h1><br>
-        <p id="homeRemedy"></p>
     </div>
     <button class="my-button" onclick="goTo('page6')">Next</button>
 </section>
 
 <section id="page6" class="page">
     <div class="box">
-        <h1>Risk Indicator</h1>
-        <textarea id="riskBox" rows="6" cols="30"></textarea>
+        <h1>Home Remedies</h1><br>
+        <p id="homeRemedy"></p>
     </div>
     <button class="my-button" onclick="goTo('page7')">Next</button>
 </section>
 
-<section id="page91" class="page">
+<section id="page7" class="page">
+    <div class="box">
+        <h1>Risk Indicator</h1>
+        <textarea id="riskBox" rows="6" cols="30"></textarea>
+    </div>
+    <button class="my-button" onclick="goTo('page8')">Next</button>
+</section>
+
+<section id="page10" class="page">
     <div class="box">
         <h3>Blood Test Values</h3>
         <input type="number" id="hb" placeholder="Hemoglobin (g/dL)">
@@ -103,135 +127,370 @@
     </div>
 
     <button class="my-button" onclick="analyzeReport()">Analyze Report</button>
-    <button class="my-button" onclick="goTo('page7')">Next</button>
+    <button class="my-button" onclick="goTo('page8')">Next</button>
 </section>
 
-<section id="page7" class="page">
+<section id="page8" class="page">
     <h1>Doctor Recommendation</h1>
     <div class="box">
         <h3 id="doctorType">Recommended Doctor :</h3>
     </div>
     <button class="my-button" onclick="suggestDoctorByDisease()">Suggest</button>
-    <button class="my-button" onclick="goTo('page8')">next</button>
+    <button class="my-button" onclick="goTo('page9')">next</button>
 </section>
 
-<section id="page8" class="page">
+<section id="page9" class="page">
     <h1>DISCLAIMER</h1>
     <p>This app is only for education purpose. Please consult a doctor.</p>
     <button class="my-button" onclick="goTo('page1')">Get Well Soon</button>
 </section>
 
-<script>
-let predictedDisease = "";
+<section id="page11" class="page">
+    <h1>MENTAL HEALTH SECTION</h1>
+    <p>BARAF is a mental wellness and awareness platform.<br>
+        it does not provide medical diagnosis or treatment.<br>
+    for professional help, please consult a mental health expert.</p>
+    <button class="my-button" onclick="goTo('page12')">Next</button>
+</section>
 
+<section id="page12" class="page">
+    <h1>mood selection</h1>
+    <form>
+        <label><input type="radio" name="mood" value="happy"> Happy</label><br>
+        <label><input type="radio" name="mood" value="sad"> Sad</label><br>
+        <label><input type="radio" name="mood" value="anxious"> Anxious</label><br>
+        <label><input type="radio" name="mood" value="angry"> Angry</label><br>
+        <label><input type="radio" name="mood" value="stressed"> Stressed</label><br>
+    </form>
+    <button class="my-button" onclick="showMood(); goTo('page13')">Next</button>
+</section>
+
+<section id="page13" class="page">
+    <h1 id="moodTitle"></h1>
+
+    <div id="happy" class="mood-box">
+        <p>It's great to hear that you're feeling happy!<br>
+        Maintaining a positive mood is important.</p>
+        <ul>
+            <li>Practice gratitude</li>
+            <li>Do activities you enjoy</li>
+            <li>Spend time with loved ones</li>
+        </ul>
+    </div>
+
+    <div id="sad" class="mood-box">
+        <p>I'm sorry to hear that you're feeling sad.</p>
+        <ul>
+            <li>Talk to someone you trust</li>
+            <li>Do relaxing activities</li>
+            <li>Seek professional help if needed</li>
+        </ul>
+    </div>
+
+    <div id="anxious" class="mood-box">
+        <p>I understand you're feeling anxious.</p>
+        <ul>
+            <li>Practice deep breathing</li>
+            <li>Exercise regularly</li>
+            <li>Talk to a professional</li>
+        </ul>
+    </div>
+
+    <div id="angry" class="mood-box">
+        <p>It's okay to feel angry sometimes.</p>
+        <ul>
+            <li>Pause before reacting</li>
+            <li>Release energy through activity</li>
+            <li>Seek support if needed</li>
+        </ul>
+    </div>
+
+    <div id="stressed" class="mood-box">
+        <p>I'm sorry you're feeling stressed.</p>
+        <ul>
+            <li>Try relaxation techniques</li>
+            <li>Stay physically active</li>
+            <li>Talk to someone you trust</li>
+        </ul>
+    </div>
+
+    <button class="my-button" onclick="goTo('page14')">Next</button>
+</section>
+
+<section id="page14" class="page">
+    <h1>mind relaxing techniques</h1>
+    <p>Here are some techniques to help relax your mind:<br>
+       <ul>
+        <li> Deep Breathing: Take slow, deep breaths to calm your<br> nervous system.<br>
+        <li> Meditation: Practice mindfulness meditation to focus<br> on the present moment.<br>
+        <li> Progressive Muscle Relaxation: Tense and then relax different<br> muscle groups in your body.<br>
+        <li> Visualization: Imagine a peaceful scene or place to help<br> reduce stress.<br>    
+    </ul>
+    <button class="my-button" onclick="goTo('page15')">Next</button>
+    </p>
+</section>
+
+<section id="page15" class="page">
+    <h1>resources for mental health support</h1>
+    <p>Here are some resources for mental health support:<br>
+       <ul>
+        <li> Emergency services : 112(police,medical,ambulance)</li>
+        <li> jeevan aastha helpline(suicide prevention): 1800-233-3330</li>
+        <li> Tele-MANAS(24x7 mental health counselling): 14416 or 1800-891-4416</li>
+        <li> AASRA(emotional support): 98204-66728</li>
+    </ul>
+    </p>
+    <button class="my-button" onclick="goTo('page16')">Next</button>
+</section>
+
+<section id="page16" class="page">
+    <h1>Final Tips for Mental Health</h1>
+    <p>Remember these final tips for maintaining good mental health:<br>
+       <ul>
+        <li> Maintain a healthy lifestyle with regular<br> exercise and a balanced diet.<br>
+        <li> Stay connected with friends and family.<br>
+        <li> Seek professional help when needed.<br>
+        <li> Practice self-care and mindfulness.<br>
+    </ul>
+    <button class="my-button" onclick="goTo('page2')">Finish</button>
+    </p>
+    </section>
+
+<script>
+let predictedDisease = "General Weakness";
+
+/* ---------------- PAGE NAVIGATION ---------------- */
 function goTo(pageid){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     document.getElementById(pageid).classList.add('active');
 }
 
-function submitSymptomsAndPredict() {
+/* ---------------- DISEASE DATABASE ---------------- */
+const diseaseDB = {
+    "Common Cold": {
+        cause: "Viral respiratory infection,weather change,weak immunity",
+        remedy: "Rest, warm fluids, steam inhalation,ginger tea",
+        risk: "Low",
+        doctor: "General Physician"
+    },
+     "influenza(flu)": {
+        cause: "influenza virus,close contact with infected person",
+        remedy: "rest,warm fluids,",
+        risk: "medium",
+        doctor: "General Physician"
+    },
+    "Migraine": {
+        cause: "stress, hormonal changes,lack of sleep,loud noise",
+        remedy: "Dark room rest, hydration, cold compress",
+        risk: "Moderate",
+        doctor: "Neurologist"
+    },
+    "Food Poisoning": {
+        cause: "Contaminated food or water,bacterial or viral infection",
+        remedy: "ORS, hydration, light food,rest,avoid spicy and oily food",
+        risk: "Moderate(can become high in children,elderly,or severe dehydration)",
+        doctor: "Gastroenterologist/general physician"
+    },
+    "Heart Attack": {
+        cause: "Blocked arteries,high cholesterol,smoking,stress",
+        remedy: "no home remedies-emergency required",
+        risk: "Very High",
+        doctor: "Cardiologist"
+    },
+    "Jaundice": {
+        cause: "Bilirubin buildup,liver infection,hepatitis virus,alcohol abuse",
+        remedy: "Healthy diet, avoid alcohol, rest, hydration",
+        risk: "High",
+        doctor: "Hepatologist/general physician"
+    },
+    "Anemia": {
+        cause: "Low hemoglobin,iron deficiency,blood loss,poor nutrition",
+        remedy: "Iron rich foods & supplements,dates,spinach",
+        risk: "Moderate",
+        doctor: "General Physician"
+    },
+    "Diabetes": {
+        cause: "insuffisient insulin production, insulin resistance, genetics,obesity,unhealthy diet",
+        remedy: "Low sugar diet & exercise,weight control,proper sleep,stress management",
+        risk: "High",
+        doctor: "Endocrinologist/general physician"
+    },
+    "Hypertension": {
+        cause: "High blood pressure,obesity,stress,high salt intake,genetics,smoking & alcohol",
+        remedy: "Low salt diet, exercise,stress management,avoid smoking & alcohol,weight management",
+        risk: "High",
+        doctor: "Cardiologist/general physician"
+    },
+    "General Weakness": {
+        cause: "Fatigue or low immunity",
+        remedy: "Healthy diet, rest",
+        risk: "Low",
+        doctor: "General Physician"
+    }
+};
 
-    const s = {
+/* ---------------- DISEASE RULES ---------------- */
+const diseaseRules = [
+    { disease: "Common Cold", symptoms: ["fever", "cough", "runny_nose", "sneeze", "sore throat"] },
+    { disease: "influenza(flu)", symptoms: ["fever","chills","headache","fatigue","sore muscles","cough"] },
+    { disease: "Migraine", symptoms: ["headache","nausea","vomiting","dizziness"] },
+    { disease: "Food Poisoning", symptoms: ["nausea", "vomiting", "diarrhea","abdominal pain","fever"] },
+    { disease: "Heart Attack", symptoms: ["chest_pain", "shortness_of_breath","dizziness","nausea","fatigue"] },
+    { disease: "Jaundice", symptoms: ["yellow_skin_and_eyes", "fatigue", "nausea","abdominal_pain","weight_loss"] },
+    { disease: "Anemia", symptoms: ["fatigue", "dizziness", "shortness_of_breath","headache","pale_skin"] },
+    { disease: "Diabetes", symptoms: ["fatigue", "weight_loss", "frequent_urination","blurred_vision","nausea","slow_wound_healing"] },
+    { disease: "Hypertension", symptoms: ["headache", "nosebleed", "dizziness","fatigue","chest_pain","blurred_vision","shortness_of_breath"] }
+];
+
+/* ---------------- GET SYMPTOMS ---------------- */
+function getSelectedSymptoms() {
+    return {
         fever: fever.checked,
         runny_nose: runny_nose.checked,
-        sore_muscles: sore_muscles.checked,
-        headache: headache.checked,
         cough: cough.checked,
-        nausea: nausea.checked,
+        headache: headache.checked,
         migraine: migraine.checked,
         vomiting: vomiting.checked,
+        nausea: nausea.checked,
+        chest_pain: chest_pain.checked,
+        shortness_of_breath: shortness_of_breath.checked,
         fatigue: fatigue.checked,
         diarrhea: diarrhea.checked,
-        shortness_of_breath: shortness_of_breath.checked,
-        chest_pain: chest_pain.checked,
-        sore_throat: sore_throat.checked,
+        yellow_skin_and_eyes: yellow_skin_and_eyes.checked,
+        rash: rash.checked,
         chills: chills.checked,
+        sneeze: sneeze.checked,
+        confusion: confusion.checked,
+        dizziness: dizziness.checked,
+        numbness: numbness.checked,
+        nosebleed: nosebleed.checked,
+        sore_throat: sore_throat.checked,
+        sore_muscles: sore_muscles.checked,
         abdominal_pain: abdominal_pain.checked,
-        nosebleed: nosebleed.checked
+        night_sweats: night_sweats.checked,
+        weight_loss: weight_loss.checked,
+        blood_in_stool: blood_in_stool.checked,
+        frequent_urination: frequent_urination.checked,
+        blurred_vision: blurred_vision.checked,
+        slow_wound_healing: slow_wound_healing.checked,
+        pale_skin: pale_skin.checked
+        
     };
-
-    if (s.fever && s.cough && s.runny_nose) {
-        predictedDisease = "Common Cold / Flu";
-    }
-    else if (s.migraine && s.headache && s.vomiting) {
-        predictedDisease = "Migraine";
-    }
-    else if (s.nausea && s.vomiting && s.fever) {
-        predictedDisease = "Food Poisoning";
-    }
-    else if (s.chest_pain && s.shortness_of_breath && s.nosebleed) {
-        predictedDisease = "Hypertension";
-    }
-    else {
-        predictedDisease = "General Weakness";
-    }
-
-    showDiseaseDetails();
-    goTo("page4");
 }
 
+function submitSymptomsAndPredict() {
+
+    const symptoms = getSelectedSymptoms();
+    let bestMatch = "General Weakness";
+    let highestScore = 0;
+
+    for (let rule of diseaseRules) {
+        let matchCount = 0;
+
+        rule.symptoms.forEach(sym => {
+            if (symptoms[sym]) matchCount++;
+        });
+
+        let score = matchCount / rule.symptoms.length;
+
+        if (score > highestScore && score >= 0.5) {
+            highestScore = score;
+            bestMatch = rule.disease;
+        }
+    }
+
+    predictedDisease = bestMatch;
+    showDiseaseDetails();
+    goTo("page5");
+}
+
+
+/* ---------------- DISPLAY ---------------- */
 function showDiseaseDetails() {
-
-    let cause="", remedy="", risk="";
-
-    if (predictedDisease==="Common Cold / Flu") {
-        cause="Viral respiratory infection";
-        remedy="Rest, warm fluids, steam inhalation";
-        risk="Low";
-    }
-    else if (predictedDisease==="Migraine") {
-        cause="Neurological disorder";
-        remedy="Dark room rest, hydration";
-        risk="Moderate";
-    }
-    else if (predictedDisease==="Food Poisoning") {
-        cause="Contaminated food or water";
-        remedy="ORS, hydration, light food";
-        risk="Moderate";
-    }
-    else if (predictedDisease==="Hypertension") {
-        cause="Stress, obesity, high salt, genetics";
-        remedy="Low salt diet, exercise, stress control";
-        risk="High – heart risk";
-    }
-    else {
-        cause="Weak immunity or fatigue";
-        remedy="Healthy diet, rest";
-        risk="Low";
-    }
+    const d = diseaseDB[predictedDisease];
 
     diseaseName.innerHTML = "Disease : " + predictedDisease;
-    diseaseCause.innerHTML = "Cause : " + cause;
-    homeRemedy.innerHTML = "Remedies : " + remedy;
-    riskBox.value = "Risk Level : " + risk;
+    diseaseCause.innerHTML = "Cause : " + d.cause;
+    homeRemedy.innerHTML = d.remedy;
+    riskBox.value = "Risk Level : " + d.risk;
 }
 
+/* ---------------- REPORT ANALYSIS ---------------- */
 function analyzeReport() {
 
-    let result="";
-    const hb=hb.value, sugar=sugar.value, wbc=wbc.value;
-    const sys=systolic.value, dia=diastolic.value;
+    let result = "";
+    let detectedDiseases = [];
 
-    if(hb) result+= hb<12 ? "Low Hemoglobin<br>" : "Hemoglobin Normal<br>";
-    if(sugar) result+= sugar>140 ? "High Sugar<br>" : "Sugar Normal<br>";
-    if(wbc) result+= wbc>11000 ? "High WBC<br>" : "WBC Normal<br>";
-    if(sys && dia) result+= (sys>140||dia>90) ? "High BP<br>" : "BP Normal<br>";
-    if(ecgResult.value) result+= "ECG : "+ecgResult.value;
+    // Get input values safely
+    const hbVal = Number(document.getElementById("hb").value);
+    const sugarVal = Number(document.getElementById("sugar").value);
+    const sysVal = Number(document.getElementById("systolic").value);
+    const diaVal = Number(document.getElementById("diastolic").value);
+    const ecgVal = document.getElementById("ecgResult").value;
 
-    reportResult.innerHTML=result;
+    if (hbVal && hbVal < 12) {
+        result += "Low Hemoglobin → Possible Anemia<br>";
+        detectedDiseases.push("Anemia");
+    }
+
+    if (sugarVal && sugarVal > 140) {
+        result += "High Blood Sugar → Possible Diabetes<br>";
+        detectedDiseases.push("Diabetes");
+    }
+
+    if (sysVal && diaVal && (sysVal > 140 || diaVal > 90)) {
+        result += "High BP → Possible Hypertension<br>";
+        detectedDiseases.push("Hypertension");
+    }
+
+    if (ecgVal === "abnormal") {
+        result += "Abnormal ECG → Heart Risk<br>";
+        detectedDiseases.push("Heart Disease");
+    }
+
+    // Show first detected disease (or modify if you want all)
+    if (detectedDiseases.length > 0) {
+        predictedDisease = detectedDiseases[0];
+        showDiseaseDetails();
+    }
+
+    document.getElementById("reportResult").innerHTML =
+        result || "All values appear normal";
 }
 
+
+/* ---------------- DOCTOR ---------------- */
 function suggestDoctorByDisease() {
-
-    let doctor="General Physician";
-
-    if(predictedDisease==="Migraine") doctor="Neurologist";
-    else if(predictedDisease==="Food Poisoning") doctor="Gastroenterologist";
-    else if(predictedDisease==="Hypertension") doctor="Cardiologist";
-
-    doctorType.innerText="Recommended Doctor : "+doctor;
+    const d = diseaseDB[predictedDisease] || diseaseDB["General Weakness"];
+    doctorType.innerText = "Recommended Doctor : " + d.doctor;
 }
-</script>
 
+/* ---------------- MOOD SELECTION ---------------- */
+function showMood() {
+    const selectedMood = document.querySelector('input[name="mood"]:checked');
+
+    if (!selectedMood) {
+        alert("Please select a mood");
+        return;
+    }
+
+    // Hide all mood boxes
+    document.querySelectorAll('.mood-box').forEach(box => {
+        box.style.display = "none";
+    });
+
+    // Show selected mood
+    const moodValue = selectedMood.value;
+    document.getElementById(moodValue).style.display = "block";
+
+    // Set heading
+    document.getElementById("moodTitle").innerText =
+        moodValue.charAt(0).toUpperCase() + moodValue.slice(1);
+
+    // Go to next page
+    goTo('page13');
+}
+
+</script>
 </body>
 </html>
